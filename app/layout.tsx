@@ -1,3 +1,4 @@
+import Header from '@/components/header/Header';
 import { Children } from '@/types/Children';
 import { Locale } from '@/types/Locale';
 import { getLocale } from 'gt-next/server';
@@ -49,6 +50,8 @@ export default async function RootLayout({ children }: Readonly<Children>) {
     <html className="h-full" lang={await getLocale()} suppressHydrationWarning>
       <body className={`${inter.variable} h-full antialiased`}>
         <Providers>
+          <Header />
+
           <main role="main" className="flex-auto">
             {children}
           </main>
