@@ -1,0 +1,32 @@
+import { Button } from '@/components/ui/button';
+import { T } from 'gt-next';
+import { contacts } from './data';
+
+export default function Contacts() {
+  return (
+    <T>
+      <section className="flex flex-col items-center gap-4">
+        <h3 className="font-bold md:text-lg">Reach out to us</h3>
+
+        <ul role="list" className="flex flex-col items-center">
+          {contacts.map(({ type, label, value }) => (
+            <li key={type} role="listitem">
+              <Button
+                variant="link"
+                asChild
+                className="rounded-[3px] text-white focus-visible:ring-0"
+              >
+                <a
+                  href={`${type}:${value}`}
+                  className="focus-visible:text-custom-primary transition-colors duration-300 focus:outline-none focus-visible:bg-white focus-visible:outline-none"
+                >
+                  {label ? label : value}
+                </a>
+              </Button>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </T>
+  );
+}

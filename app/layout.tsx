@@ -1,3 +1,4 @@
+import Footer from '@/components/footer/Footer';
 import Header from '@/components/header/Header';
 import { Children } from '@/types/Children';
 import { Locale } from '@/types/Locale';
@@ -55,6 +56,8 @@ export default async function RootLayout({ children }: Readonly<Children>) {
           <main role="main" className="flex-auto">
             {children}
           </main>
+
+          <Footer />
         </Providers>
       </body>
     </html>
