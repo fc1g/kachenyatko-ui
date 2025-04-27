@@ -5,7 +5,7 @@ import { contacts } from './data';
 export default function Contacts() {
   return (
     <T>
-      <section className="flex flex-col items-center gap-4">
+      <section id="contacts" className="flex flex-col items-center gap-4">
         <h3 className="font-bold md:text-lg">Reach out to us</h3>
 
         <ul role="list" className="flex flex-col items-center">

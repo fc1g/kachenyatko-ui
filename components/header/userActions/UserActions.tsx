@@ -33,7 +33,7 @@ export default function UserActions() {
                 aria-label={t(action.label)}
                 className={`${pathname.startsWith(action.href) ? 'text-custom-primary bg-white' : 'text-white'} group-focus-visible:text-custom-primary h-6 w-6 cursor-pointer rounded-[3px] transition-colors duration-300 group-focus-visible:bg-white`}
               >
-                <use href={`/sprite.svg#${action.icon}`} />
+                <use href={`/icons/sprite.svg#${action.icon}`} />
               </svg>
             </Link>
           )}
@@ -45,7 +45,7 @@ export default function UserActions() {
                   aria-label={t(action.label)}
                   className={`${pathname.startsWith(action.href) ? 'text-custom-primary bg-white' : 'text-white'} group-focus-visible:text-custom-primary h-6 w-6 cursor-pointer rounded-[3px] transition-colors duration-300 group-focus-visible:bg-white`}
                 >
-                  <use href={`/sprite.svg#${action.icon}`} />
+                  <use href={`/icons/sprite.svg#${action.icon}`} />
                 </svg>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
