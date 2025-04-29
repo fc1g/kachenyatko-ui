@@ -1,21 +1,44 @@
 <svg width="0" height="0" class="hidden">
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="flower">
+    <path d="M12 5C12 4.40666 12.1759 3.82664 12.5056 3.33329C12.8352 2.83994 13.3038 2.45543 13.852 2.22836C14.4001 2.0013 15.0033 1.94189 15.5853 2.05765C16.1672 2.1734 16.7018 2.45912 17.1213 2.87868C17.5409 3.29824 17.8266 3.83279 17.9424 4.41473C18.0581 4.99667 17.9987 5.59987 17.7716 6.14805C17.5446 6.69623 17.1601 7.16477 16.6667 7.49441C16.1734 7.82405 15.5933 8 15 8M12 5C12 4.40666 11.8241 3.82664 11.4944 3.33329C11.1648 2.83994 10.6962 2.45543 10.1481 2.22836C9.59987 2.0013 8.99667 1.94189 8.41473 2.05765C7.83279 2.1734 7.29824 2.45912 6.87868 2.87868C6.45912 3.29824 6.1734 3.83279 6.05765 4.41473C5.94189 4.99667 6.0013 5.59987 6.22836 6.14805C6.45543 6.69623 6.83994 7.16477 7.33329 7.49441C7.82664 7.82405 8.40666 8 9 8M12 5V6M15 8C15.5933 8 16.1734 8.17595 16.6667 8.50559C17.1601 8.83524 17.5446 9.30377 17.7716 9.85195C17.9987 10.4001 18.0581 11.0033 17.9424 11.5853C17.8266 12.1672 17.5409 12.7018 17.1213 13.1213C16.7018 13.5409 16.1672 13.8266 15.5853 13.9424C15.0033 14.0581 14.4001 13.9987 13.852 13.7716C13.3038 13.5446 12.8352 13.1601 12.5056 12.6667C12.1759 12.1734 12 11.5933 12 11M15 8H14M9 8C8.40666 8 7.82664 8.17595 7.33329 8.50559C6.83994 8.83524 6.45543 9.30377 6.22836 9.85195C6.0013 10.4001 5.94189 11.0033 6.05765 11.5853C6.1734 12.1672 6.45912 12.7018 6.87868 13.1213C7.29824 13.5409 7.83279 13.8266 8.41473 13.9424C8.99667 14.0581 9.59987 13.9987 10.1481 13.7716C10.6962 13.5446 11.1648 13.1601 11.4944 12.6667C11.8241 12.1734 12 11.5933 12 11M9 8H10M12 11V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M12 10C13.1046 10 14 9.10457 14 8C14 6.89543 13.1046 6 12 6C10.8954 6 10 6.89543 10 8C10 9.10457 10.8954 10 12 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M12 10V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M12 22C16.2 22 19 20.333 19 17C14.8 17 12 18.667 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M12 22C7.8 22 5 20.333 5 17C9.2 17 12 18.667 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  </symbol>
+
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="github">
+    <path d="M15 22V18C15.1392 16.7473 14.78 15.4901 14 14.5C17 14.5 20 12.5 20 9C20.08 7.75 19.73 6.52 19 5.5C19.28 4.35 19.28 3.15 19 2C19 2 18 2 16 3.5C13.36 3 10.64 3 8.00004 3.5C6.00004 2 5.00004 2 5.00004 2C4.70004 3.15 4.70004 4.35 5.00004 5.5C4.27191 6.51588 3.91851 7.75279 4.00004 9C4.00004 12.5 7.00004 14.5 10 14.5C9.61004 14.99 9.32004 15.55 9.15004 16.15C8.98004 16.75 8.93004 17.38 9.00004 18V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M9 18C4.49 20 4 16 2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  </symbol>
+
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="instagram">
     <path d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     <path d="M16 11.3701C16.1234 12.2023 15.9812 13.0523 15.5937 13.7991C15.2062 14.5459 14.5931 15.1515 13.8416 15.5297C13.0901 15.908 12.2384 16.0397 11.4077 15.906C10.5771 15.7723 9.80971 15.3801 9.21479 14.7852C8.61987 14.1903 8.22768 13.4229 8.09402 12.5923C7.96035 11.7616 8.09202 10.91 8.47028 10.1584C8.84854 9.40691 9.45414 8.7938 10.2009 8.4063C10.9477 8.0188 11.7977 7.87665 12.63 8.00006C13.4789 8.12594 14.2648 8.52152 14.8716 9.12836C15.4785 9.73521 15.8741 10.5211 16 11.3701Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
   </symbol>
+  
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="shopping-cart">
     <path d="M8 22C8.55228 22 9 21.5523 9 21C9 20.4477 8.55228 20 8 20C7.44772 20 7 20.4477 7 21C7 21.5523 7.44772 22 8 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     <path d="M19 22C19.5523 22 20 21.5523 20 21C20 20.4477 19.5523 20 19 20C18.4477 20 18 20.4477 18 21C18 21.5523 18.4477 22 19 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     <path d="M2.05005 2.05005H4.05005L6.71005 14.47C6.80763 14.9249 7.06072 15.3315 7.42576 15.6199C7.7908 15.9083 8.24495 16.0604 8.71005 16.05H18.49C18.9452 16.0493 19.3865 15.8933 19.7411 15.6079C20.0956 15.3224 20.3422 14.9246 20.4401 14.48L22.09 7.05005H5.12005" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
   </symbol>
+
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="tiktok">
     <g transform="scale(1.08, 1)">
       <path d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     </g>
   </symbol>
+
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="user">
     <path d="M19 21V19C19 17.9391 18.5786 16.9217 17.8284 16.1716C17.0783 15.4214 16.0609 15 15 15H9C7.93913 15 6.92172 15.4214 6.17157 16.1716C5.42143 16.9217 5 17.9391 5 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  </symbol>
+
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="sprout">
+    <path d="M7 20H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M10 20C15.5 17.5 10.8 13.6 13 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M9.5 9.40009C10.6 10.2001 11.3 11.6001 11.8 13.1001C9.8 13.5001 8.3 13.5001 7 12.8001C5.8 12.2001 4.7 10.9001 4 8.60009C6.8 8.10009 8.4 8.60009 9.5 9.40009Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M14.1 6C13.3376 7.19156 12.9541 8.58615 13 10C14.9 9.9 16.3 9.4 17.3 8.6C18.3 7.6 18.9 6.3 19 4C16.3 4.1 15 5 14.1 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
   </symbol>
 </svg>

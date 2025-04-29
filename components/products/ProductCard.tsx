@@ -14,7 +14,10 @@ export default function ProductCard({
   return (
     <Card className="w-full max-w-[25rem] md:max-w-full">
       <CardHeader>
-        <Link href={`/products/${id}`}>
+        <Link
+          href={`/products/${id}`}
+          className="transition-transform duration-300 focus:outline-none focus-visible:scale-105"
+        >
           <figure className="relative h-44 w-full md:h-[clamp(10rem,15vw,16rem)]">
             <Image
               src={image}
