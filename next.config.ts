@@ -3,6 +3,11 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
+
+  // TODO: add my backend domain
+  images: {
+    domains: ['images.unsplash.com'],
+  },
 };
 
 export default withGTConfig(nextConfig, {
