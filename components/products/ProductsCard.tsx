@@ -19,7 +19,9 @@ export default function ProductsCard({
     <Card
       className={cn(
         'w-full max-w-[25rem]',
-        direction === 'row' ? 'sm:max-w-full sm:flex-row' : 'md:max-w-full',
+        direction === 'row'
+          ? 'sm:max-w-full sm:flex-row sm:gap-0 lg:gap-6'
+          : 'md:max-w-full',
       )}
     >
       <CardHeader

@@ -23,7 +23,7 @@ export default function Header() {
 
       {/* Desktop navigation */}
       <div className="hidden md:block">
-        <Navigation />
+        <Navigation className="items-center" />
       </div>
 
       {/* User actions. Shopping cart and account */}

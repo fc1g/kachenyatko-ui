@@ -8,14 +8,14 @@ import { useNavStore } from '../store/NavStore';
 import { navigationLinks } from './data';
 
 type NavigationProps = {
-  itemsPosition?: 'center' | 'start';
+  className?: string;
   flexDirection?: 'row' | 'column';
   isFooter?: boolean;
 };
 
 export default function Navigation({
   flexDirection = 'row',
-  itemsPosition = 'center',
+  className = '',
   isFooter = false,
 }: NavigationProps) {
   const closeMenu = useNavStore(state => state.closeMenu);
@@ -46,7 +46,7 @@ export default function Navigation({
     <nav id="navigation" role="navigation">
       <ul
         role="list"
-        className={`${flexDirection === 'row' ? 'inline-flex gap-6 lg:gap-8 xl:gap-12' : 'flex flex-col gap-4 md:gap-6'} ${itemsPosition === 'center' ? 'items-center' : 'items-start'}`}
+        className={`${flexDirection === 'row' ? 'inline-flex gap-6 lg:gap-8 xl:gap-12' : 'flex flex-col gap-4 md:gap-6'} ${className}`}
       >
         {navigationLinks.map(({ href, label }) => {
           if (isFooter && href.includes('contacts')) return null;

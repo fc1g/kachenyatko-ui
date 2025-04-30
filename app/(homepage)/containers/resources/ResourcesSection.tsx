@@ -22,7 +22,7 @@ export default function Resources() {
               </div>
 
               <T>
-                <p className="text-custom-black">{text}</p>
+                <p className="text-base xl:text-lg">{text}</p>
               </T>
             </li>
           ))}

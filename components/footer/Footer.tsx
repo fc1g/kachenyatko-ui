@@ -15,7 +15,11 @@ export default function Footer() {
         <Logo />
 
         {/* Footer navigation */}
-        <Navigation flexDirection="column" isFooter={true} />
+        <Navigation
+          className="items-center md:items-start"
+          flexDirection="column"
+          isFooter={true}
+        />
       </div>
 
       {/* Contacts and social media */}

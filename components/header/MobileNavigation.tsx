@@ -14,7 +14,7 @@ export default function MobileNavigation() {
           : 'pointer-events-none -translate-y-full opacity-0'
       }`}
     >
-      <Navigation flexDirection="column" />
+      <Navigation className="items-center" flexDirection="column" />
     </div>
   );
 }
