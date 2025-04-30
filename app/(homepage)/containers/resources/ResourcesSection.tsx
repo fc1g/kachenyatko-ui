@@ -1,18 +1,16 @@
 import { T } from 'gt-next';
+import SectionHeading from '../../components/SectionHeading';
 import { resources } from './data';
 
 export default function Resources() {
   return (
     <section
+      id="info"
       aria-label="Resources section"
       className="relative mt-[clamp(4rem,10vw,7rem)] bg-[rgba(252,218,47,0.5)]"
     >
       <div className="px-4 py-4 sm:px-6 lg:px-8 xl:container xl:mx-auto">
-        <T>
-          <h2 className="text-[clamp(1.5rem,6vw,2.5rem)] font-bold">
-            Resources
-          </h2>
-        </T>
+        <SectionHeading title="Resources" align="left" />
 
         <ul role="list" className="mt-4 flex flex-col gap-6">
           {resources.map(({ icon, text }) => (
@@ -23,7 +21,9 @@ export default function Resources() {
                 </svg>
               </div>
 
-              <p className="text-custom-black">{text}</p>
+              <T>
+                <p className="text-custom-black">{text}</p>
+              </T>
             </li>
           ))}
         </ul>

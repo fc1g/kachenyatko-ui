@@ -3,6 +3,7 @@
 import { useGT } from 'gt-next/client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useCallback } from 'react';
 import { useNavStore } from '../store/NavStore';
 import { navigationLinks } from './data';
 
@@ -21,6 +22,26 @@ export default function Navigation({
   const pathname = usePathname();
   const t = useGT();
 
+  const handleClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      const isAnchor = href.includes('#');
+
+      if (isAnchor) {
+        e.preventDefault();
+        closeMenu();
+
+        const element = document.getElementById(`${href.split('#')[1]}`);
+
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      } else {
+        closeMenu();
+      }
+    },
+    [closeMenu],
+  );
+
   return (
     <nav id="navigation" role="navigation">
       <ul
@@ -37,7 +58,7 @@ export default function Navigation({
                 role="link"
                 href={href}
                 tabIndex={flexDirection === 'column' && isActive ? -1 : 0}
-                onClick={closeMenu}
+                onClick={e => handleClick(e, href)}
                 className={`${isActive ? 'text-custom-primary bg-white font-semibold' : 'text-white'} focus-visible:text-custom-primary rounded-[3px] p-1 transition-colors duration-300 focus:outline-none focus-visible:bg-white`}
               >
                 {t(label)}

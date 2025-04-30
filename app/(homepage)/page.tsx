@@ -1,15 +1,28 @@
-import Bestsellers from './containers/bestsellers/Bestsellers';
+import LocaleSelector from '@/components/LocaleSelector';
+import Reveal from '@/components/Reveal';
+import BestsellersSection from './containers/bestsellers/BestsellersSection';
 import HeroSection from './containers/hero/HeroSection';
-import Resources from './containers/resources/Resources';
+import NewestProductsSection from './containers/newest/NewestProductsSection';
+import ResourcesSection from './containers/resources/ResourcesSection';
 
 export default function Home() {
   return (
     <>
       <HeroSection />
 
-      <Bestsellers />
+      <Reveal>
+        <BestsellersSection />
+      </Reveal>
 
-      <Resources />
+      <Reveal>
+        <ResourcesSection />
+      </Reveal>
+
+      <Reveal>
+        <NewestProductsSection />
+      </Reveal>
+
+      <LocaleSelector />
     </>
   );
 }
