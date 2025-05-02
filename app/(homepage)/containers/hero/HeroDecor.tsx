@@ -1,7 +1,7 @@
 import AbsDecor from '@/app/(homepage)/components/AbsDecor';
-import homeHeroBottomLeft from '@/public/images/home-hero-bottom-left.png';
-import homeHeroTopLeft from '@/public/images/home-hero-top-left.png';
-import homeHeroTopRight from '@/public/images/home-hero-top-right.png';
+import BerryHugger from '@/public/images/berry-hugger.png';
+import DinoDreamy from '@/public/images/dino-dreamy.png';
+import RainbowDino from '@/public/images/rainbow-dino.png';
 import Image from 'next/image';
 
 export default function HeroDecor() {
@@ -27,8 +27,8 @@ export default function HeroDecor() {
         className="top-0 -left-15 landscape:-top-10 landscape:-left-20"
       >
         <Image
-          src={homeHeroTopLeft}
-          alt="Handmade green crochet plush doll in blue shorts, holding a red strawberry with closed eyes and a peaceful smile."
+          src={BerryHugger}
+          alt="A soft crocheted dinosaur plush toy wearing blue shorts, with sleepy embroidered eyes and a gentle smile, hugging a small red strawberry plush with green leaves. The dinosaur has a brown crest and a silver ring on its arm."
           width={300}
           height={300}
           priority
@@ -41,8 +41,8 @@ export default function HeroDecor() {
         className="hidden md:top-0 md:-right-25 md:block"
       >
         <Image
-          src={homeHeroTopRight}
-          alt="Small round crocheted green frog plush toy with sleepy eyes and a red strawberry on its head."
+          src={DinoDreamy}
+          alt="A small, soft crocheted green plush toy with sleepy embroidered eyes and a tiny smile, featuring a red strawberry with yellow seeds on top of its head."
           width={800}
           height={800}
           priority
@@ -55,8 +55,8 @@ export default function HeroDecor() {
         className="hidden md:-bottom-10 md:-left-5 md:block landscape:md:-bottom-10 landscape:md:left-0"
       >
         <Image
-          src={homeHeroBottomLeft}
-          alt="Green crocheted dinosaur plush toy with colorful back spikes and a cheerful expression, facing left."
+          src={RainbowDino}
+          alt="A cute crocheted dinosaur plush toy with a green body, rainbow-colored spikes on its back, pink cheeks, black button eyes, a cream belly, and a friendly smile."
           width={300}
           height={300}
           priority

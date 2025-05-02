@@ -26,7 +26,7 @@ export default function CtaSection() {
       <AbsDecor className="-top-10 right-[clamp(0rem,2vw,4.5rem)] z-10 hidden xl:block">
         <Image
           src={kachenya}
-          alt="kachenya"
+          alt="A soft crocheted yellow duck plush toy with small black button eyes, an orange beak, tiny wings, and orange feet, designed in a round and chubby shape."
           priority
           width={300}
           height={300}

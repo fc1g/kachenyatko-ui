@@ -1,4 +1,4 @@
-import customOrderImage from '@/public/images/home-hero-top-left.png';
+import BerryHugger from '@/public/images/berry-hugger.png';
 import { T } from 'gt-next';
 import Image from 'next/image';
 import SectionHeading from '../../components/SectionHeading';
@@ -10,8 +10,8 @@ export default function CustomOrderSection() {
         <div className="flex items-center gap-8">
           <figure className="relative hidden h-[clamp(16rem,20vw,24rem)] w-[clamp(16rem,20vw,24rem)] lg:block">
             <Image
-              src={customOrderImage}
-              alt="Custom Order"
+              src={BerryHugger}
+              alt="A soft crocheted dinosaur plush toy wearing blue shorts, with sleepy embroidered eyes and a gentle smile, hugging a small red strawberry plush with green leaves. The dinosaur has a brown crest and a silver ring on its arm."
               priority
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
