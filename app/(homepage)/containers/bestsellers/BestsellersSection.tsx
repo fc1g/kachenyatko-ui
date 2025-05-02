@@ -7,7 +7,7 @@ export default function Bestsellers() {
   return (
     <section aria-label="Bestsellers section">
       <div className="px-4 sm:px-6 lg:px-8 xl:container xl:mx-auto">
-        <SectionHeading title="Bestsellers" />
+        <SectionHeading className="text-center" title="Bestsellers" />
 
         <Suspense fallback={<ProductsCardSkeleton numOfCards={3} />}>
           <Cards />

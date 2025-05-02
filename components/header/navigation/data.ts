@@ -15,10 +15,10 @@ export const navigationLinks: NavigationLink[] = [
   },
   {
     label: 'Info',
-    href: '/#info',
+    href: '#info',
   },
   {
     label: 'Contacts',
-    href: '/#contacts',
+    href: '#contacts',
   },
 ];

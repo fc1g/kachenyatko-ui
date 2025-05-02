@@ -21,11 +21,11 @@ export default function CustomOrderSection() {
 
           <div>
             <div className="inline-flex items-center gap-4">
-              <svg className="h-10 w-10" role="img" aria-hidden={true}>
+              <svg className="size-10" role="img" aria-hidden={true}>
                 <use href="/icons/sprite.svg#dog" />
               </svg>
 
-              <SectionHeading title="Custom Order" align="left" />
+              <SectionHeading title="Custom Order" className="text-left" />
             </div>
 
             <div className="mt-6 flex flex-col gap-4">

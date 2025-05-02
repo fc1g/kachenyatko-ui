@@ -13,6 +13,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { generateUserActions } from './data';
 
+// TODO: implement user actions
+
 export default function UserActions() {
   const t = useGT();
   const pathname = usePathname();
@@ -31,7 +33,7 @@ export default function UserActions() {
             >
               <svg
                 aria-label={t(action.label)}
-                className={`${pathname.startsWith(action.href) ? 'text-custom-primary bg-white' : 'text-white'} group-focus-visible:text-custom-primary h-6 w-6 cursor-pointer rounded-[3px] transition-colors duration-300 group-focus-visible:bg-white`}
+                className={`${pathname.startsWith(action.href) ? 'text-custom-primary bg-white' : 'text-white'} group-focus-visible:text-custom-primary size-6 cursor-pointer rounded-[3px] transition-colors duration-300 group-focus-visible:bg-white`}
               >
                 <use href={`/icons/sprite.svg#${action.icon}`} />
               </svg>
@@ -43,7 +45,7 @@ export default function UserActions() {
               <DropdownMenuTrigger className="group focus:outline-none">
                 <svg
                   aria-label={t(action.label)}
-                  className={`${pathname.startsWith(action.href) ? 'text-custom-primary bg-white' : 'text-white'} group-focus-visible:text-custom-primary h-6 w-6 cursor-pointer rounded-[3px] transition-colors duration-300 group-focus-visible:bg-white`}
+                  className={`${pathname.startsWith(action.href) ? 'text-custom-primary bg-white' : 'text-white'} group-focus-visible:text-custom-primary size-6 cursor-pointer rounded-[3px] transition-colors duration-300 group-focus-visible:bg-white`}
                 >
                   <use href={`/icons/sprite.svg#${action.icon}`} />
                 </svg>
@@ -55,8 +57,16 @@ export default function UserActions() {
                       <Link
                         role="link"
                         href={item.href}
-                        className="focus-visible:bg-custom-secondary transition-colors duration-300"
+                        className="focus-visible:bg-custom-secondary inline-flex w-full items-center gap-4 font-medium transition-colors duration-300"
                       >
+                        <svg
+                          className="text-custom-black size-6"
+                          role="img"
+                          aria-hidden={true}
+                        >
+                          <use href={`/icons/sprite.svg#${item.icon}`} />
+                        </svg>
+
                         {t(item.label)}
                       </Link>
                     </DropdownMenuItem>

@@ -7,7 +7,7 @@ export default function NewestProductsSection() {
   return (
     <section aria-label="Newest products section">
       <div className="mt-16 px-4 sm:px-6 lg:px-8 xl:container xl:mx-auto">
-        <SectionHeading title="New products" />
+        <SectionHeading title="New products" className="text-center" />
 
         <Suspense
           fallback={<ProductCardSkeleton numOfCards={2} direction="row" />}

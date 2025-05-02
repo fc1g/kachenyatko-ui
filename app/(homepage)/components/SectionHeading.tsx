@@ -2,16 +2,16 @@ import { T } from 'gt-next';
 
 type SectionHeadingProps = {
   title: string;
-  align?: 'center' | 'left' | 'right';
+  className?: string;
 };
 
 export default function SectionHeading({
   title,
-  align = 'center',
+  className = '',
 }: SectionHeadingProps) {
   return (
     <T>
-      <h2 className={`text-${align} text-[clamp(1.5rem,6vw,2.5rem)] font-bold`}>
+      <h2 className={`${className} text-[clamp(1.5rem,5vw,2.7rem)] font-bold`}>
         {title}
       </h2>
     </T>

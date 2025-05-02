@@ -11,7 +11,7 @@ type Action = {
 
 export const useAuthStore = create<State & Action>()(
   devtools(set => ({
-    isLoggedIn: true,
+    isLoggedIn: false,
     setIsLoggedIn: isLoggedIn => set({ isLoggedIn }),
   })),
 );

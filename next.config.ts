@@ -6,7 +6,11 @@ const nextConfig: NextConfig = {
 
   // TODO: add my backend domain
   images: {
-    domains: ['images.unsplash.com'],
+    remotePatterns: [
+      {
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
 };
 

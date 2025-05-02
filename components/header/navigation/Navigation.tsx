@@ -2,7 +2,7 @@
 
 import { useGT } from 'gt-next/client';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { useNavStore } from '../store/NavStore';
 import { navigationLinks } from './data';
@@ -18,6 +18,7 @@ export default function Navigation({
   className = '',
   isFooter = false,
 }: NavigationProps) {
+  const router = useRouter();
   const closeMenu = useNavStore(state => state.closeMenu);
   const pathname = usePathname();
   const t = useGT();
@@ -25,12 +26,17 @@ export default function Navigation({
   const handleClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
       const isAnchor = href.includes('#');
+      const anchorId = href.split('#')[1];
 
       if (isAnchor) {
         e.preventDefault();
         closeMenu();
 
-        const element = document.getElementById(`${href.split('#')[1]}`);
+        if (pathname !== '/' && !href.includes('contacts')) {
+          router.push(`/#${anchorId}`, { scroll: true });
+        }
+
+        const element = document.getElementById(anchorId);
 
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -39,7 +45,7 @@ export default function Navigation({
         closeMenu();
       }
     },
-    [closeMenu],
+    [closeMenu, pathname, router],
   );
 
   return (

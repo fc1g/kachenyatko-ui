@@ -1,11 +1,11 @@
 import { MenuItem } from './type';
 
 const loggedInUserActions: MenuItem[] = [
-  { label: 'Logout', href: '/auth/logout' },
+  { label: 'Logout', href: '/auth/logout', icon: 'log-out' },
 ];
 const guestUserActions: MenuItem[] = [
-  { label: 'Sign in', href: '/auth/login' },
-  { label: 'Sign up', href: '/auth/signup' },
+  { label: 'Login', href: '/auth/login', icon: 'log-in' },
+  { label: 'Sign up', href: '/auth/signup', icon: 'sign-up' },
 ];
 
 export function generateUserActions(isLoggedIn: boolean) {
@@ -22,10 +22,14 @@ export function generateUserActions(isLoggedIn: boolean) {
       href: '/account',
       icon: 'user',
       menu: [
-        { label: 'Orders history', href: '/account/orders' },
-        { label: 'Opinions', href: '/account/opinions' },
-        { label: 'My addresses', href: '/account/addresses' },
-        { label: 'Change password', href: '/account/password' },
+        {
+          label: 'Orders history',
+          href: '/account/orders',
+          icon: 'orders',
+        },
+        { label: 'Opinions', href: '/account/opinions', icon: 'opinion' },
+        { label: 'My addresses', href: '/account/addresses', icon: 'map-pin' },
+        { label: 'Change password', href: '/account/password', icon: 'key' },
         ...(isLoggedIn ? loggedInUserActions : guestUserActions),
       ],
     },
