@@ -1,5 +1,5 @@
-import Footer from '@/components/footer/Footer';
-import Header from '@/components/header/Header';
+import Footer from '@/components/features/footer/Footer';
+import Header from '@/components/features/header/Header';
 import { Children } from '@/types/Children';
 import { Locale } from '@/types/Locale';
 import { getLocale } from 'gt-next/server';

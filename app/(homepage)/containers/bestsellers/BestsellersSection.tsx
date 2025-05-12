@@ -1,17 +1,13 @@
-import ProductsCardSkeleton from '@/components/products/ProductsCardSkeleton';
-import { Suspense } from 'react';
-import SectionHeading from '../../components/SectionHeading';
-import Cards from './Cards';
+import Heading from '@/components/common/Heading';
+import BestsellersSupsense from './BestsellersSupsense';
 
-export default function Bestsellers() {
+export default function BestsellersSection() {
   return (
     <section aria-label="Bestsellers section">
       <div className="px-4 sm:px-6 lg:px-8 xl:container xl:mx-auto">
-        <SectionHeading className="text-center" title="Bestsellers" />
+        <Heading as="h2" title="Bestsellers" className="text-center" />
 
-        <Suspense fallback={<ProductsCardSkeleton numOfCards={3} />}>
-          <Cards />
-        </Suspense>
+        <BestsellersSupsense />
       </div>
     </section>
   );

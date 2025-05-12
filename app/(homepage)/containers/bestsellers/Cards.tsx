@@ -1,14 +1,10 @@
-import ProductsCard from '@/components/products/ProductsCard';
-import getBestsellers from './action';
+import ProductsList from '@/components/features/products/ProductsList';
 
 export default async function Cards() {
-  const bestsellers = await getBestsellers();
-
   return (
-    <div className="[&>div]:first:bg-custom-yellow [&>div]:even:bg-custom-pink [&>div]:last:bg-custom-blue mt-12 grid grid-cols-1 justify-items-center gap-8 md:grid-cols-3 lg:gap-12">
-      {bestsellers.map(product => (
-        <ProductsCard key={product.id} data={product} />
-      ))}
-    </div>
+    <ProductsList
+      data={[]}
+      className="[&>div:nth-child(1)]:bg-custom-yellow [&>div:nth-child(2)]:bg-custom-pink [&>div:nth-child(3)]:bg-custom-blue md:grid-cols-3"
+    />
   );
 }

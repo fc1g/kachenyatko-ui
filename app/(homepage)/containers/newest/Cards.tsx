@@ -1,14 +1,11 @@
-import ProductsCard from '@/components/products/ProductsCard';
-import getNewestProducts from './action';
+import ProductsList from '@/components/features/products/ProductsList';
 
 export default async function Cards() {
-  const newestProducts = await getNewestProducts();
-
   return (
-    <div className="[&>div]:bg-custom-pink mt-8 grid grid-cols-1 justify-items-center gap-12 lg:grid-cols-2">
-      {newestProducts.map(product => (
-        <ProductsCard key={product.id} data={product} direction="row" />
-      ))}
-    </div>
+    <ProductsList
+      data={[]}
+      direction="row"
+      className="[&>div]:bg-custom-pink lg:grid-cols-2"
+    />
   );
 }

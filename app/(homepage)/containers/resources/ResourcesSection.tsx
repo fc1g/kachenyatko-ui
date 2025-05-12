@@ -1,5 +1,5 @@
+import Heading from '@/components/common/Heading';
 import { T } from 'gt-next';
-import SectionHeading from '../../components/SectionHeading';
 import { resources } from './data';
 
 export default function Resources() {
@@ -9,8 +9,8 @@ export default function Resources() {
       aria-label="Resources section"
       className="relative mt-[clamp(4rem,10vw,7rem)] bg-[rgba(252,218,47,0.5)]"
     >
-      <div className="px-4 py-4 sm:px-6 lg:px-8 xl:container xl:mx-auto">
-        <SectionHeading title="Resources" className="text-left" />
+      <div className="p-[clamp(1rem,2vw,3rem)] xl:container xl:mx-auto">
+        <Heading as="h2" title="Resources" className="text-left" />
 
         <ul role="list" className="mt-4 flex flex-col gap-6">
           {resources.map(({ icon, text }) => (
