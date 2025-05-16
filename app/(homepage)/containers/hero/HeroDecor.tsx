@@ -1,4 +1,4 @@
-import AbsDecor from '@/components/common/decor/AbsDecor';
+import { AbsDecor } from '@/components/common';
 import BerryHugger from '@/public/images/berry-hugger.png';
 import DinoDreamy from '@/public/images/dino-dreamy.png';
 import RainbowDino from '@/public/images/rainbow-dino.png';

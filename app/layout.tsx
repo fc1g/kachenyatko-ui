@@ -1,7 +1,5 @@
-import Footer from '@/components/features/footer/Footer';
-import Header from '@/components/features/header/Header';
-import { Children } from '@/types/Children';
-import { Locale } from '@/types/Locale';
+import { Footer, Header } from '@/components/features';
+import { Children, Locale } from '@/types';
 import { getLocale } from 'gt-next/server';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';

@@ -1,15 +1,15 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
 import {
+  Button,
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+  Input,
+} from '@/components/ui';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useGT } from 'gt-next/client';
 import { useForm } from 'react-hook-form';

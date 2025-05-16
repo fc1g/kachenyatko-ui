@@ -1,4 +1,4 @@
-import Heading from '@/components/common/Heading';
+import { Heading } from '@/components/common';
 import { T } from 'gt-next';
 import { resources } from './data';
 

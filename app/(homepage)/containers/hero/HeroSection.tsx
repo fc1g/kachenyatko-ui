@@ -1,5 +1,5 @@
-import Heading from '@/components/common/Heading';
-import { Button } from '@/components/ui/button';
+import { Heading } from '@/components/common';
+import { Button } from '@/components/ui';
 import { T } from 'gt-next';
 import Link from 'next/link';
 import HeroDecor from './HeroDecor';

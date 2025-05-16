@@ -1,10 +1,11 @@
-import CtaSection from '@/components/common/cta/CtaSection';
-import Reveal from '@/components/common/Reveal';
-import BestsellersSection from './containers/bestsellers/BestsellersSection';
-import CustomOrderSection from './containers/custom/CustomOrderSection';
-import HeroSection from './containers/hero/HeroSection';
-import NewestProductsSection from './containers/newest/NewestProductsSection';
-import ResourcesSection from './containers/resources/ResourcesSection';
+import { CtaSection, Reveal } from '@/components/common';
+import {
+  BestsellersSection,
+  CustomOrderSection,
+  HeroSection,
+  NewestProductsSection,
+  ResourcesSection,
+} from './containers';
 
 export default function Home() {
   return (

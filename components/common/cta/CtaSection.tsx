@@ -1,7 +1,6 @@
-import AbsDecor from '@/components/common/decor/AbsDecor';
+import { AbsDecor, Heading } from '@/components/common';
 import kachenya from '@/public/images/kachenya.png';
 import Image from 'next/image';
-import Heading from '../Heading';
 import CtaForm from './CtaForm';
 
 export default function CtaSection() {

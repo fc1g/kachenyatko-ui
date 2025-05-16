@@ -1,7 +1,7 @@
 'use client';
 
-import { useInView } from '@/hooks/useInView';
-import { Children } from '@/types/Children';
+import { useInView } from '@/hooks';
+import { Children } from '@/types';
 
 type RevealProps = {
   className?: string;

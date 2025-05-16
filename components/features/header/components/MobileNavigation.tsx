@@ -1,7 +1,7 @@
 'use client';
 
 import Navigation from '@/components/common/navigation/Navigation';
-import { useNavStore } from '@/store/NavStore';
+import { useNavStore } from '@/store/useNavStore';
 
 export default function MobileNavigation() {
   const isOpen = useNavStore(state => state.isOpen);

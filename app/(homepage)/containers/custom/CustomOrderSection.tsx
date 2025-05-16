@@ -1,4 +1,4 @@
-import Heading from '@/components/common/Heading';
+import { Heading } from '@/components/common';
 import BerryHugger from '@/public/images/berry-hugger.png';
 import { T } from 'gt-next';
 import Image from 'next/image';

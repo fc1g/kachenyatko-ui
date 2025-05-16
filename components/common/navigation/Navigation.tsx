@@ -1,6 +1,6 @@
 'use client';
 
-import { useNavStore } from '@/store/NavStore';
+import { useNavStore } from '@/store';
 import { useGT } from 'gt-next/client';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';

@@ -1,6 +1,6 @@
 'use client';
 
-import { useNavStore } from '@/store/NavStore';
+import { useNavStore } from '@/store/useNavStore';
 import { useGT } from 'gt-next/client';
 import { useEffect } from 'react';
 import './Hamburger.css';

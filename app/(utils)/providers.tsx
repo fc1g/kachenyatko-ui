@@ -1,5 +1,5 @@
-import { Toaster } from '@/components/ui/sonner';
-import { Children } from '@/types/Children';
+import { Toaster } from '@/components/ui';
+import { Children } from '@/types';
 import { GTProvider } from 'gt-next';
 import { ApolloWrapper } from './apollo-wrapper';
 

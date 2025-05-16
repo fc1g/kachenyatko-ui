@@ -1,4 +1,4 @@
-import { Product } from '@/api/endpoints/products/types';
+import { Product } from '@/api/features/products/entities/types';
 import { cn } from '@/lib/utils';
 import ProductsCard from './ProductsCard';
 
