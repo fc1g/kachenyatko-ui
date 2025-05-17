@@ -1,3 +1,4 @@
+import { NEXT_PUBLIC_SITE_URL } from '@/api/config/config';
 import { Footer, Header } from '@/components/features';
 import { Children, Locale } from '@/types';
 import { getLocale } from 'gt-next/server';
@@ -35,7 +36,10 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: t.title,
       description: t.description,
+      siteName: 'Kachenyatko store',
+      url: NEXT_PUBLIC_SITE_URL,
       locale: locale === 'uk' ? 'uk_UA' : 'en_US',
+      type: 'website',
     },
     twitter: {
       title: t.title,

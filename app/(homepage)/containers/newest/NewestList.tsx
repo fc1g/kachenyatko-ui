@@ -1,10 +1,10 @@
 'use client';
 
-import { useNewest } from '@/api';
+import { NUM_OF_PRODUCTS, useNewest } from '@/api';
 import { ProductsList } from '@/components/features';
 
 export default function NewestList() {
-  const newest = useNewest(2);
+  const newest = useNewest(NUM_OF_PRODUCTS.NEWEST);
 
   return (
     <ProductsList

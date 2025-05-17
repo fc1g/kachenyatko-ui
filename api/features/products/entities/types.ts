@@ -16,6 +16,7 @@ export type Product = AbstractEntity & {
   images: ProductImage[];
   details: ProductDetail[];
   specification: ProductSpecification;
+  categories: ProductCategory[];
 };
 
 export type ProductImage = AbstractEntity & {
@@ -34,4 +35,9 @@ export type ProductSpecification = AbstractEntity & {
   material: string;
   ageGroup: string;
   packageSize: string;
+};
+
+export type ProductCategory = AbstractEntity & {
+  name: string;
+  slug: string;
 };

@@ -1,10 +1,10 @@
 'use client';
 
-import { useBestsellers } from '@/api';
+import { NUM_OF_PRODUCTS, useBestsellers } from '@/api';
 import { ProductsList } from '@/components/features';
 
 export default function BestsellersList() {
-  const bestsellers = useBestsellers(3);
+  const bestsellers = useBestsellers(NUM_OF_PRODUCTS.BESTSELLER);
 
   return (
     <ProductsList

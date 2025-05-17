@@ -1,3 +1,4 @@
+import { NUM_OF_PRODUCTS } from '@/api';
 import { Heading } from '@/components/common';
 import { ProductsListSkeleton } from '@/components/features/products';
 import { Suspense } from 'react';
@@ -12,7 +13,7 @@ export default function NewestProductsSection() {
         <Suspense
           fallback={
             <ProductsListSkeleton
-              numOfCards={2}
+              numOfCards={NUM_OF_PRODUCTS.NEWEST}
               className="[&>div]:bg-custom-pink lg:grid-cols-2"
               direction="row"
             />

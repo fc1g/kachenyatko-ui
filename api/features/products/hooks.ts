@@ -11,26 +11,46 @@ export const useCreateProduct = () => {
   );
 };
 
-export const useBestsellers = (take: number) => {
-  const { data } = useSuspenseQuery<{
-    bestsellers: Product[];
-  }>(GET_BESTSELLERS, {
-    variables: {
-      take,
-    },
-  });
+export const useBestsellers = (take: number): Product[] => {
+  try {
+    const { data } = useSuspenseQuery<{
+      bestsellers: Product[];
+    }>(GET_BESTSELLERS, {
+      variables: {
+        take,
+      },
+    });
 
-  return data.bestsellers;
+    return data.bestsellers;
+  } catch (err) {
+    console.error('💥 Failed to fetch bestsellers:', err);
+
+    if (err instanceof Error) {
+      throw new Error(err.message || 'Failed to fetch bestsellers');
+    }
+
+    throw new Error('Failed to fetch bestsellers');
+  }
 };
 
-export const useNewest = (take: number) => {
-  const { data } = useSuspenseQuery<{
-    newest: Product[];
-  }>(GET_NEWEST, {
-    variables: {
-      take,
-    },
-  });
+export const useNewest = (take: number): Product[] => {
+  try {
+    const { data } = useSuspenseQuery<{
+      newest: Product[];
+    }>(GET_NEWEST, {
+      variables: {
+        take,
+      },
+    });
 
-  return data.newest;
+    return data.newest;
+  } catch (err) {
+    console.error('💥 Failed to fetch newest:', err);
+
+    if (err instanceof Error) {
+      throw new Error(err.message || 'Failed to fetch newest');
+    }
+
+    throw new Error('Failed to fetch newest');
+  }
 };

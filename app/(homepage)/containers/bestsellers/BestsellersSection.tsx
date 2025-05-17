@@ -1,3 +1,4 @@
+import { NUM_OF_PRODUCTS } from '@/api';
 import { Heading } from '@/components/common';
 import { ProductsListSkeleton } from '@/components/features/products';
 import { Suspense } from 'react';
@@ -13,7 +14,7 @@ export default function BestsellersSection() {
           fallback={
             <ProductsListSkeleton
               className="[&>div:nth-child(1)]:bg-custom-yellow [&>div:nth-child(2)]:bg-custom-pink [&>div:nth-child(3)]:bg-custom-blue md:grid-cols-3"
-              numOfCards={3}
+              numOfCards={NUM_OF_PRODUCTS.BESTSELLER}
             />
           }
         >

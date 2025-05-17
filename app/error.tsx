@@ -19,7 +19,7 @@ export default function Error({ error, reset }: ErrorProps) {
       <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
         <div className="mx-auto max-w-screen-sm text-center">
           <h2 className="text-secondary-foreground mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-            {t(error.message)}
+            {t(error.message) || 'An unexpected error occurred'}
           </h2>
 
           <Button
