@@ -1,56 +1,72 @@
-import { useMutation } from '@apollo/client';
-import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr';
-import { CreateProductInput } from './dto/types';
+import { useSuspenseQuery } from '@apollo/client';
 import { Product } from './entities/types';
-import { CREATE_PRODUCT } from './mutations';
-import { GET_BESTSELLERS, GET_NEWEST } from './queries';
-
-export const useCreateProduct = () => {
-  return useMutation<{ createProduct: Product }, { input: CreateProductInput }>(
-    CREATE_PRODUCT,
-  );
-};
+import {
+  GET_BESTSELLERS,
+  GET_NEWEST,
+  GET_OTHER_PRODUCTS,
+  GET_PRODUCT_BY_ID,
+  GET_PRODUCT_BY_SKU,
+} from './queries';
 
 export const useBestsellers = (take: number): Product[] => {
-  try {
-    const { data } = useSuspenseQuery<{
-      bestsellers: Product[];
-    }>(GET_BESTSELLERS, {
-      variables: {
-        take,
-      },
-    });
+  const { data } = useSuspenseQuery<{
+    bestsellers: Product[];
+  }>(GET_BESTSELLERS, {
+    variables: {
+      take,
+    },
+    fetchPolicy: 'cache-first',
+  });
 
-    return data.bestsellers;
-  } catch (err) {
-    console.error('💥 Failed to fetch bestsellers:', err);
-
-    if (err instanceof Error) {
-      throw new Error(err.message || 'Failed to fetch bestsellers');
-    }
-
-    throw new Error('Failed to fetch bestsellers');
-  }
+  return data.bestsellers;
 };
 
 export const useNewest = (take: number): Product[] => {
-  try {
-    const { data } = useSuspenseQuery<{
-      newest: Product[];
-    }>(GET_NEWEST, {
+  const { data } = useSuspenseQuery<{ newest: Product[] }>(GET_NEWEST, {
+    variables: {
+      take,
+    },
+    fetchPolicy: 'cache-first',
+  });
+
+  return data.newest;
+};
+
+export const useOtherProducts = (id: string, take: number): Product[] => {
+  const { data } = useSuspenseQuery<{
+    otherProducts: Product[];
+  }>(GET_OTHER_PRODUCTS, {
+    variables: {
+      id,
+      take,
+    },
+    fetchPolicy: 'cache-first',
+  });
+
+  return data.otherProducts;
+};
+
+export const useProductById = (id: string): Product => {
+  const { data } = useSuspenseQuery<{ product: Product }>(GET_PRODUCT_BY_ID, {
+    variables: {
+      id,
+    },
+    fetchPolicy: 'cache-first',
+  });
+
+  return data.product;
+};
+
+export const useProductBySku = (sku: string): Product => {
+  const { data } = useSuspenseQuery<{ productBySku: Product }>(
+    GET_PRODUCT_BY_SKU,
+    {
       variables: {
-        take,
+        sku,
       },
-    });
+      fetchPolicy: 'cache-first',
+    },
+  );
 
-    return data.newest;
-  } catch (err) {
-    console.error('💥 Failed to fetch newest:', err);
-
-    if (err instanceof Error) {
-      throw new Error(err.message || 'Failed to fetch newest');
-    }
-
-    throw new Error('Failed to fetch newest');
-  }
+  return data.productBySku;
 };

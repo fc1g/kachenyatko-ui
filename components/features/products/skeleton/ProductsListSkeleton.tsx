@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import { nanoid } from 'nanoid';
 import ProductCardSkeleton from './ProductsCardSkeleton';
 
 type ProductsListSkeleton = {
@@ -19,8 +20,8 @@ export default function ProductsListSkeleton({
         className,
       )}
     >
-      {Array.from({ length: numOfCards }).map((_, i) => (
-        <ProductCardSkeleton key={i} direction={direction} />
+      {Array.from({ length: numOfCards }).map(() => (
+        <ProductCardSkeleton key={nanoid(6)} direction={direction} />
       ))}
     </div>
   );

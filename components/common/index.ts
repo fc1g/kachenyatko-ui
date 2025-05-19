@@ -1,4 +1,5 @@
 export { default as CtaSection } from './cta/CtaSection';
+export * from './CustomErrorBoundary';
 export { default as AbsDecor } from './decor/AbsDecor';
 export { default as YellowPinkShapes } from './decor/YellowPinkShapes';
 export { default as Heading } from './Heading';

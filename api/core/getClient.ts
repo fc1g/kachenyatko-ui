@@ -1,8 +1,14 @@
-import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
-import { registerApolloClient } from '@apollo/experimental-nextjs-app-support';
-import { getGraphqlUri } from '../config/getGraphqlUri';
+'use server';
 
-export const { getClient } = registerApolloClient(() => {
+import { getGraphqlUri } from '@/api';
+import { HttpLink } from '@apollo/client';
+import {
+  ApolloClient,
+  InMemoryCache,
+  registerApolloClient,
+} from '@apollo/client-integration-nextjs';
+
+export const { query, PreloadQuery } = registerApolloClient(async () => {
   return new ApolloClient({
     cache: new InMemoryCache({ addTypename: false }),
     link: new HttpLink({

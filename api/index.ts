@@ -1,4 +1,5 @@
+export * from './config';
 export * from './constants';
-export * from './core/makeClient';
-export * from './features/products';
+export * from './core';
+export * from './features';
 export * from './types/common';

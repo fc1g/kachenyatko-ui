@@ -1,4 +1,4 @@
-import { NEXT_PUBLIC_SITE_URL } from '@/api/config/config';
+import { NEXT_PUBLIC_SITE_URL } from '@/api';
 import { Footer, Header } from '@/components/features';
 import { Children, Locale } from '@/types';
 import { getLocale } from 'gt-next/server';
