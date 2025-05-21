@@ -2,6 +2,7 @@
 
 import { NUM_OF_PRODUCTS, useOtherProducts } from '@/api';
 import { ProductsList } from '@/components/features';
+import { useGT } from 'gt-next/client';
 
 type OtherProductsProps = {
   id: string;
@@ -9,12 +10,13 @@ type OtherProductsProps = {
 
 export default function OtherProducts({ id }: OtherProductsProps) {
   const otherProducts = useOtherProducts(id, NUM_OF_PRODUCTS.OTHER);
+  const t = useGT();
 
   if (otherProducts.length === 0)
     return (
-      <div className="flex h-full items-center justify-center">
+      <div className="mt-4 flex h-full items-center justify-center">
         <p className="text-custom-black text-[clamp(1.5rem,5vw,2rem)] font-bold">
-          No similar products found
+          {t('No similar products found')}
         </p>
       </div>
     );

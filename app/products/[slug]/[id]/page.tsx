@@ -4,6 +4,7 @@ import {
   NEXT_PUBLIC_SITE_URL,
   NUM_OF_PRODUCTS,
   PreloadQuery,
+  REVALIDATE_PRODUCT,
 } from '@/api';
 import {
   GET_OTHER_PRODUCTS,
@@ -15,13 +16,15 @@ import {
   Heading,
   PageBreadcrumbs,
 } from '@/components/common';
-import { ProductsListSkeleton } from '@/components/features/products';
+import {
+  OtherProducts,
+  ProductInfo,
+  ProductInfoSkeleton,
+  ProductsListSkeleton,
+} from '@/components/features/products';
 import { getGT, getLocale } from 'gt-next/server';
 import type { Metadata } from 'next/types';
 import { Suspense } from 'react';
-import OtherProducts from '../components/OtherProducts';
-import ProductInfo from '../components/ProductInfo';
-import ProductInfoSkeleton from '../components/ProductInfoSkeleton';
 
 type ProductPageParams = {
   params: Promise<{
@@ -81,13 +84,13 @@ export async function generateMetadata({
   };
 }
 
-export const revalidate = 60;
+export const revalidate = REVALIDATE_PRODUCT;
 
 export default async function ProductPage({ params }: ProductPageParams) {
   const { id } = await params;
 
   return (
-    <>
+    <div className="mt-4 px-[clamp(2rem,3vw,4rem)]">
       <PageBreadcrumbs pathname={`/products/${id}`} basePath="products" />
 
       <PreloadQuery query={GET_PRODUCT_BY_ID} variables={{ id }}>
@@ -118,6 +121,6 @@ export default async function ProductPage({ params }: ProductPageParams) {
       </div>
 
       <CtaSection />
-    </>
+    </div>
   );
 }

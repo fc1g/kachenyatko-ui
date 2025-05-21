@@ -1,7 +1,7 @@
 'use client';
 
-import { useProductStore } from '@/components/features/products';
 import { useGT } from 'gt-next/client';
+import { useCallback, useState } from 'react';
 
 type ProductDescriptionProps = {
   description: string;
@@ -10,9 +10,12 @@ type ProductDescriptionProps = {
 export default function ProductDescription({
   description,
 }: ProductDescriptionProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
   const t = useGT();
-  const isExpanded = useProductStore(store => store.isExpanded);
-  const toggleExpanded = useProductStore(store => store.toggleExpanded);
+
+  const toggleExpanded = useCallback(() => {
+    setIsExpanded(prev => !prev);
+  }, [setIsExpanded]);
 
   return (
     <div className="flex flex-col gap-4">

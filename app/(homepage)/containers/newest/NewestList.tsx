@@ -8,6 +8,7 @@ export default function NewestList() {
 
   return (
     <ProductsList
+      emptyMessage="No newest products found"
       data={newest}
       direction="row"
       className="[&>div]:bg-custom-pink lg:grid-cols-2"

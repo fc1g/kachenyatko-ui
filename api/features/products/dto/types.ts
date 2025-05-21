@@ -25,3 +25,10 @@ export type ProductMetadata = {
     }[];
   };
 };
+
+export type ProductPaginationOptions = {
+  take: number;
+  skip: number;
+  sort: 'ASC' | 'DESC' | 'asc' | 'desc';
+  categoryIds: string[];
+};

@@ -1,12 +1,30 @@
 import { useSuspenseQuery } from '@apollo/client';
-import { Product } from './entities/types';
+import { ProductPaginationOptions } from './dto/types';
+import { Product, ProductCategory } from './entities/types';
 import {
   GET_BESTSELLERS,
   GET_NEWEST,
   GET_OTHER_PRODUCTS,
   GET_PRODUCT_BY_ID,
   GET_PRODUCT_BY_SKU,
+  GET_PRODUCT_CATEGORIES,
+  GET_PRODUCTS,
 } from './queries';
+
+export const useProducts = (
+  options: ProductPaginationOptions,
+): { items: Product[]; total: number } => {
+  const { data } = useSuspenseQuery<{
+    products: { items: Product[]; total: number };
+  }>(GET_PRODUCTS, {
+    variables: {
+      options,
+    },
+    fetchPolicy: 'cache-first',
+  });
+
+  return data.products;
+};
 
 export const useBestsellers = (take: number): Product[] => {
   const { data } = useSuspenseQuery<{
@@ -69,4 +87,12 @@ export const useProductBySku = (sku: string): Product => {
   );
 
   return data.productBySku;
+};
+
+export const useProductCategories = (): ProductCategory[] => {
+  const { data } = useSuspenseQuery<{ categories: ProductCategory[] }>(
+    GET_PRODUCT_CATEGORIES,
+  );
+
+  return data.categories;
 };

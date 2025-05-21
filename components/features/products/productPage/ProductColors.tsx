@@ -18,16 +18,20 @@ export default function ProductColors({ colors }: ProductColorsProps) {
   const handleColorClick = useCallback(
     (color: string) => {
       const params = new URLSearchParams(searchParams);
+      const currentColor = params.get('color');
       params.set('color', color);
-      toast.success(`Color  to #${color}`, {
-        style: {
-          backgroundColor: 'var(--color-custom-secondary)',
-          color: 'green',
+      toast.success(
+        t(`Color ${currentColor ? 'changed' : 'selected'} to #${color}`),
+        {
+          style: {
+            backgroundColor: 'var(--color-custom-secondary)',
+            color: 'green',
+          },
         },
-      });
+      );
       router.push(`${pathname}?${params.toString()}`);
     },
-    [searchParams, pathname, router],
+    [searchParams, pathname, router, t],
   );
 
   return (

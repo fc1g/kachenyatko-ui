@@ -1,18 +1,24 @@
 'use client';
 
-import { useProductStore } from '@/components/features/products';
 import { Button } from '@/components/ui';
 import { useGT } from 'gt-next/client';
+import { useCallback, useState } from 'react';
 
 type ProductActionProps = {
   stock: number;
 };
 
 export default function ProductAction({ stock }: ProductActionProps) {
+  const [quantity, setQuantity] = useState(1);
   const t = useGT();
-  const quantity = useProductStore(store => store.quantity);
-  const inc = useProductStore(store => store.inc);
-  const dec = useProductStore(store => store.dec);
+
+  const inc = useCallback(() => {
+    setQuantity(prev => prev + 1);
+  }, [setQuantity]);
+
+  const dec = useCallback(() => {
+    setQuantity(prev => prev - 1);
+  }, [setQuantity]);
 
   // TODO: Add server action to add product to cart
 

@@ -8,6 +8,7 @@ export default function BestsellersList() {
 
   return (
     <ProductsList
+      emptyMessage="No bestsellers found"
       data={bestsellers}
       className="[&>div:nth-child(1)]:bg-custom-yellow [&>div:nth-child(2)]:bg-custom-pink [&>div:nth-child(3)]:bg-custom-blue md:grid-cols-3"
     />

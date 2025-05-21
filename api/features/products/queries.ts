@@ -1,5 +1,31 @@
 import { gql } from '@apollo/client';
 
+export const GET_PRODUCTS = gql`
+  query Products($options: PaginationOptionsInput!) {
+    products(options: $options) {
+      items {
+        id
+        name
+        slug
+        shortDescription
+        formattedPrice
+        formattedOldPrice
+        stock
+        images {
+          url
+          altText
+          position
+        }
+        categories {
+          name
+          slug
+        }
+      }
+      total
+    }
+  }
+`;
+
 export const GET_BESTSELLERS = gql`
   query Bestsellers($take: Float!) {
     bestsellers(take: $take) {
@@ -149,6 +175,16 @@ export const GET_PRODUCT_BY_SKU = gql`
         name
         slug
       }
+    }
+  }
+`;
+
+export const GET_PRODUCT_CATEGORIES = gql`
+  query Categories {
+    categories {
+      id
+      name
+      slug
     }
   }
 `;

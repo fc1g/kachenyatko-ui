@@ -6,23 +6,22 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui';
+import { T } from 'gt-next';
 import Link from 'next/link';
 
 type PageBreadcrumbsProps = {
   pathname: string;
   basePath?: string;
-  children?: React.ReactNode;
 };
 
 export default function PageBreadcrumbs({
   pathname,
   basePath = '',
-  children,
 }: PageBreadcrumbsProps) {
   const paths = pathname.split('/');
 
   return (
-    <div className="mt-4 flex flex-col gap-[clamp(1.5rem,3vw,3rem)] px-[clamp(2rem,3vw,3rem)]">
+    <T>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -53,8 +52,6 @@ export default function PageBreadcrumbs({
           ))}
         </BreadcrumbList>
       </Breadcrumb>
-
-      {children}
-    </div>
+    </T>
   );
 }
