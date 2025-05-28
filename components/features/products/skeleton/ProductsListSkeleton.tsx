@@ -12,12 +12,14 @@ type ProductsListSkeleton = {
   numOfCards: number;
   direction?: 'row' | 'column';
   className?: string;
+  pagination?: boolean;
 };
 
 export default function ProductsListSkeleton({
   numOfCards,
   direction = 'column',
   className = '',
+  pagination = false,
 }: ProductsListSkeleton) {
   return (
     <div className="flex-1">
@@ -32,23 +34,25 @@ export default function ProductsListSkeleton({
         ))}
       </div>
 
-      <Pagination className="my-12">
-        <PaginationContent>
-          <PaginationItem>
-            <Skeleton className="bg-custom-primary h-9 w-[6.25rem]" />
-          </PaginationItem>
-
-          {Array.from({ length: 3 }).map(() => (
-            <PaginationItem key={nanoid(6)}>
-              <Skeleton className="bg-custom-primary h-9 w-9" />
+      {pagination && (
+        <Pagination className="my-12">
+          <PaginationContent>
+            <PaginationItem>
+              <Skeleton className="bg-custom-primary h-9 w-[6.25rem]" />
             </PaginationItem>
-          ))}
 
-          <PaginationItem>
-            <Skeleton className="bg-custom-primary h-9 w-18" />
-          </PaginationItem>
-        </PaginationContent>
-      </Pagination>
+            {Array.from({ length: 3 }).map(() => (
+              <PaginationItem key={nanoid(6)}>
+                <Skeleton className="bg-custom-primary h-9 w-9" />
+              </PaginationItem>
+            ))}
+
+            <PaginationItem>
+              <Skeleton className="bg-custom-primary h-9 w-18" />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      )}
     </div>
   );
 }

@@ -63,6 +63,7 @@ export async function generateMetadata({
   return {
     title: `${title} | Kachenyatko store`,
     description,
+    keywords: metadata.categories.map(category => t(category.name)),
     openGraph: {
       title: `${title} | Kachenyatko store`,
       description,
@@ -90,16 +91,18 @@ export default async function ProductPage({ params }: ProductPageParams) {
   const { id } = await params;
 
   return (
-    <div className="mt-4 px-[clamp(2rem,3vw,4rem)]">
-      <PageBreadcrumbs pathname={`/products/${id}`} basePath="products" />
+    <>
+      <div className="mt-4 px-[clamp(2rem,3vw,4rem)]">
+        <PageBreadcrumbs pathname={`/products/${id}`} basePath="products" />
 
-      <PreloadQuery query={GET_PRODUCT_BY_ID} variables={{ id }}>
-        <CustomErrorBoundary>
-          <Suspense fallback={<ProductInfoSkeleton />}>
-            <ProductInfo id={id} />
-          </Suspense>
-        </CustomErrorBoundary>
-      </PreloadQuery>
+        <PreloadQuery query={GET_PRODUCT_BY_ID} variables={{ id }}>
+          <CustomErrorBoundary>
+            <Suspense fallback={<ProductInfoSkeleton />}>
+              <ProductInfo id={id} />
+            </Suspense>
+          </CustomErrorBoundary>
+        </PreloadQuery>
+      </div>
 
       <div className="my-16 flex flex-col px-[clamp(1.5rem,2vw,3rem)]">
         <Heading as="h2" title="Other products" />
@@ -121,6 +124,6 @@ export default async function ProductPage({ params }: ProductPageParams) {
       </div>
 
       <CtaSection />
-    </div>
+    </>
   );
 }

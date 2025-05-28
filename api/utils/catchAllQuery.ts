@@ -3,7 +3,7 @@
 import { query } from '@/api';
 import { QueryOptions } from '@apollo/client';
 
-export async function catchAll<T>(options: QueryOptions): Promise<T> {
+export const catchAllQuery = async <T>(options: QueryOptions): Promise<T> => {
   try {
     const { data } = await query(options);
     return data;
@@ -16,4 +16,4 @@ export async function catchAll<T>(options: QueryOptions): Promise<T> {
 
     throw new Error('Failed to fetch data');
   }
-}
+};

@@ -72,6 +72,7 @@ export default async function ProductsPage({
             <Suspense
               fallback={
                 <ProductsListSkeleton
+                  pagination={true}
                   className="[&>div:nth-child(3n+3)]:bg-custom-yellow [&>div:nth-child(3n+2)]:bg-custom-blue [&>div:nth-child(4n+1)]:bg-custom-pink [&>div:nth-child(4)]:bg-custom-blue [&>div:nth-child(7)]:bg-custom-yellow gap-8 sm:grid-cols-2 xl:grid-cols-3"
                   numOfCards={take}
                 />

@@ -23,6 +23,9 @@ export type ProductMetadata = {
       url: string;
       altText: string;
     }[];
+    categories: {
+      name: string;
+    }[];
   };
 };
 

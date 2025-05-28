@@ -5,3 +5,8 @@ export type AbstractEntity = {
   createdAt: Date;
   updatedAt: Date;
 };
+
+export type StatusResponse = {
+  statusCode: number;
+  message: string;
+};

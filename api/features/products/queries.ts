@@ -105,6 +105,9 @@ export const GET_PRODUCT_METADATA = gql`
         url
         altText
       }
+      categories {
+        name
+      }
     }
   }
 `;

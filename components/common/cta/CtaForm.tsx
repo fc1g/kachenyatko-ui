@@ -1,5 +1,6 @@
 'use client';
 
+import { NewsletterData, newsletterSchema, subscribeToNewsletter } from '@/api';
 import {
   Button,
   Form,
@@ -14,37 +15,47 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useGT } from 'gt-next/client';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
-import { ctaAction } from './action';
-import { ctaSchema } from './schema';
-import { CtaFormData } from './type';
 
 export default function CtaForm() {
   const t = useGT();
-  const form = useForm<CtaFormData>({
-    resolver: zodResolver(ctaSchema),
+  const form = useForm<NewsletterData>({
+    resolver: zodResolver(newsletterSchema),
     defaultValues: {
       email: '',
     },
   });
 
-  // TODO: error handling
-  async function submitHandler(data: CtaFormData) {
+  async function submitHandler(data: NewsletterData) {
     try {
-      await ctaAction(data);
-      toast.success(t('Email submitted successfully'), {
-        style: {
-          backgroundColor: 'var(--color-custom-secondary)',
-          color: 'green',
-        },
-      });
+      const { message, statusCode } = await subscribeToNewsletter(data);
+
+      if (statusCode === 200) {
+        toast.success(t(message), {
+          style: {
+            backgroundColor: 'var(--color-custom-secondary)',
+            color: 'var(--color-custom-success)',
+          },
+        });
+        form.reset();
+      } else {
+        toast.error(t(message), {
+          style: {
+            backgroundColor: 'var(--color-custom-secondary)',
+            color: 'var(--color-custom-error)',
+          },
+        });
+      }
     } catch (error) {
       console.error('Error submitting form', error);
-      toast.error(error instanceof Error ? error.message : (error as string), {
-        style: {
-          backgroundColor: 'var(--color-custom-secondary)',
-          color: 'var(--color-custom-error)',
+      toast.error(
+        t(error instanceof Error ? error.message : (error as string)),
+        {
+          style: {
+            backgroundColor: 'var(--color-custom-secondary)',
+            color: 'var(--color-custom-error)',
+          },
         },
-      });
+      );
     }
   }
 
