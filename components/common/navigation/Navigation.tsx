@@ -1,11 +1,11 @@
 'use client';
 
-import { useNavStore } from '@/store';
 import { useGT } from 'gt-next/client';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { navigationLinks } from './data';
+import { useNavigationStore } from './useNavigationStore';
 
 type NavigationProps = {
   className?: string;
@@ -13,13 +13,13 @@ type NavigationProps = {
   isFooter?: boolean;
 };
 
-export default function Navigation({
+export function BaseNavigation({
   flexDirection = 'row',
   className = '',
   isFooter = false,
 }: NavigationProps) {
   const router = useRouter();
-  const closeMenu = useNavStore(state => state.closeMenu);
+  const closeMenu = useNavigationStore(state => state.closeMenu);
   const pathname = usePathname();
   const t = useGT();
 
@@ -74,5 +74,21 @@ export default function Navigation({
         })}
       </ul>
     </nav>
+  );
+}
+
+export function MobileNavigation() {
+  const isOpen = useNavigationStore(state => state.isOpen);
+
+  return (
+    <div
+      className={`absolute inset-x-0 top-full z-10 transform p-4 font-medium transition-all duration-300 md:hidden ${
+        isOpen
+          ? 'bg-custom-primary border-custom-white translate-y-0 border-t opacity-100'
+          : 'pointer-events-none -translate-y-full opacity-0'
+      }`}
+    >
+      <BaseNavigation className="items-center" flexDirection="column" />
+    </div>
   );
 }

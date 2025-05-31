@@ -1,5 +1,5 @@
 import { AbstractEntity } from '@/api';
-import { Product } from '../entities/types';
+import { Product, ProductCategory, ProductImage } from '../entities/types';
 
 export type CreateProductInput = Omit<
   Product,
@@ -19,13 +19,8 @@ export type ProductMetadata = {
   productMetadata: {
     name: string;
     shortDescription: string;
-    images: {
-      url: string;
-      altText: string;
-    }[];
-    categories: {
-      name: string;
-    }[];
+    images: ProductImage[];
+    categories: ProductCategory[];
   };
 };
 

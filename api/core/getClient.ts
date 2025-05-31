@@ -1,6 +1,6 @@
 'use server';
 
-import { getGraphqlUri } from '@/api';
+import { getApiUrl } from '@/api';
 import { HttpLink } from '@apollo/client';
 import {
   ApolloClient,
@@ -12,7 +12,7 @@ export const { query, PreloadQuery } = registerApolloClient(async () => {
   return new ApolloClient({
     cache: new InMemoryCache({ addTypename: false }),
     link: new HttpLink({
-      uri: getGraphqlUri(),
+      uri: `${getApiUrl()}/graphql/`,
     }),
   });
 });

@@ -1,12 +1,12 @@
 'use client';
 
-import { getGraphqlUri } from '@/api';
+import { getApiUrl } from '@/api';
 import { HttpLink } from '@apollo/client';
 import { ApolloClient, InMemoryCache } from '@apollo/client-integration-nextjs';
 
 export function makeClient() {
   const httpLink = new HttpLink({
-    uri: getGraphqlUri(),
+    uri: `${getApiUrl()}/graphql/`,
   });
 
   return new ApolloClient({

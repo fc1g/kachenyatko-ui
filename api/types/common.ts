@@ -7,6 +7,7 @@ export type AbstractEntity = {
 };
 
 export type StatusResponse = {
-  statusCode: number;
   message: string;
+  error?: string;
+  statusCode: number;
 };

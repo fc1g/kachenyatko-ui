@@ -14,7 +14,7 @@ type PageBreadcrumbsProps = {
   basePath?: string;
 };
 
-export default function PageBreadcrumbs({
+export function PageBreadcrumbs({
   pathname,
   basePath = '',
 }: PageBreadcrumbsProps) {

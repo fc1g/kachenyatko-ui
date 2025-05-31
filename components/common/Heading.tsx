@@ -1,5 +1,6 @@
 import { cn } from '@/lib';
 import { T } from 'gt-next';
+import { useGT } from 'gt-next/client';
 
 type HeadingProps = {
   title: string;
@@ -7,33 +8,40 @@ type HeadingProps = {
   className?: string;
 };
 
-export default function Heading({
+const headingStyles = {
+  h1: 'text-[clamp(1.5rem,5vw,3rem)] leading-tight',
+  h2: 'text-[clamp(1.5rem,5vw,2rem)]',
+  h3: 'text-[clamp(1.25rem,5vw,1.5rem)]',
+  h4: 'text-[clamp(1rem,4vw,1.25rem)]',
+};
+
+export function Heading({ title, as: Heading, className = '' }: HeadingProps) {
+  const styles = Object.prototype.hasOwnProperty.call(headingStyles, Heading)
+    ? headingStyles[Heading]
+    : '';
+
+  return (
+    <T>
+      <Heading className={cn('text-custom-black font-bold', styles, className)}>
+        {title}
+      </Heading>
+    </T>
+  );
+}
+
+export function ClientHeading({
   title,
   as: Heading,
   className = '',
 }: HeadingProps) {
-  let headingStyles: string = '';
-
-  if (Heading === 'h1') {
-    headingStyles = 'text-[clamp(1.5rem,5vw,3rem)] leading-tight';
-  }
-  if (Heading === 'h2') {
-    headingStyles = 'text-[clamp(1.5rem,5vw,2rem)]';
-  }
-  if (Heading === 'h3') {
-    headingStyles = 'text-[clamp(1.25rem,5vw,1.5rem)]';
-  }
-  if (Heading === 'h4') {
-    headingStyles = 'text-[clamp(1rem,4vw,1.25rem)]';
-  }
+  const t = useGT();
+  const styles = Object.prototype.hasOwnProperty.call(headingStyles, Heading)
+    ? headingStyles[Heading]
+    : '';
 
   return (
-    <T>
-      <Heading
-        className={cn('text-custom-black font-bold', headingStyles, className)}
-      >
-        {title}
-      </Heading>
-    </T>
+    <Heading className={cn('text-custom-black font-bold', styles, className)}>
+      {t(title)}
+    </Heading>
   );
 }

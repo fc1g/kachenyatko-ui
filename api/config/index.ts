@@ -1,2 +1,2 @@
 export * from './config';
-export * from './getGraphqlUri';
+export * from './get-api-url';

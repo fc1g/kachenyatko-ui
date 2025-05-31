@@ -2,6 +2,6 @@
 
 import { LocaleSelector as GTLocaleSelector } from 'gt-next/client';
 
-export default function LocaleSelector() {
+export function LocaleSelector() {
   return <GTLocaleSelector />;
 }

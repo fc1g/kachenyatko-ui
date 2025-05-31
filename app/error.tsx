@@ -1,6 +1,6 @@
 'use client';
 
-import CustomError from '@/components/common/CustomError';
+import { CustomError } from '@/components/common';
 import { Button } from '@/components/ui';
 import { useGT } from 'gt-next/client';
 
