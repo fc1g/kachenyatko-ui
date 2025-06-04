@@ -5,6 +5,8 @@ import {
   NewsletterType,
   newsletterSchema,
   subscribeToNewsletter,
+  unsubscribeFromNewsletter,
+  updateEmail,
 } from '@/api/features';
 import {
   Button,
@@ -21,7 +23,13 @@ import { useGT } from 'gt-next/client';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 
-export function NewsletterForm() {
+type NewsletterFormProps = {
+  actionsType?: 'subscribe' | 'update' | 'unsubscribe';
+};
+
+export function NewsletterForm({
+  actionsType = 'subscribe',
+}: NewsletterFormProps) {
   const t = useGT();
   const form = useForm<NewsletterType>({
     resolver: zodResolver(newsletterSchema),
@@ -32,9 +40,20 @@ export function NewsletterForm() {
 
   async function submitHandler(data: NewsletterType) {
     try {
-      const { message, statusCode } = (await subscribeToNewsletter(
-        data,
-      )) as StatusResponse;
+      let message: string = '';
+      let statusCode: number = 0;
+
+      if (actionsType === 'subscribe') {
+        ({ message, statusCode } = (await subscribeToNewsletter(
+          data,
+        )) as StatusResponse);
+      } else if (actionsType === 'update') {
+        ({ message, statusCode } = (await updateEmail(data)) as StatusResponse);
+      } else if (actionsType === 'unsubscribe') {
+        ({ message, statusCode } = (await unsubscribeFromNewsletter(
+          data,
+        )) as StatusResponse);
+      }
 
       if (statusCode === 200) {
         toast.success(t(message), {

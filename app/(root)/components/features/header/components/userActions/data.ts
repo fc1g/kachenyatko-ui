@@ -26,14 +26,14 @@ export function generateUserActions() {
     //   href: '/account',
     //   icon: 'user',
     //   menu: [
-    //     {
-    //       label: 'Orders history',
-    //       href: '/account/orders',
-    //       icon: 'orders',
-    //     },
-    //     { label: 'Opinions', href: '/account/opinions', icon: 'opinion' },
-    //     { label: 'My addresses', href: '/account/addresses', icon: 'map-pin' },
-    //     { label: 'Change password', href: '/account/password', icon: 'key' },
+    // {
+    //   label: 'Orders history',
+    //   href: '/account/orders',
+    //   icon: 'orders',
+    // },
+    // { label: 'Opinions', href: '/account/opinions', icon: 'opinion' },
+    // { label: 'My addresses', href: '/account/addresses', icon: 'map-pin' },
+    // { label: 'Change password', href: '/account/password', icon: 'key' },
     //     ...(isLoggedIn ? loggedInUserActions : guestUserActions),
     //   ],
     // },
