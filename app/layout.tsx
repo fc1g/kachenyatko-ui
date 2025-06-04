@@ -1,4 +1,4 @@
-import { Footer, Header } from '@/components/features';
+import { Footer, Header } from '@/app/(root)/components';
 import { Toaster } from '@/components/ui';
 import { Children } from '@/types';
 import { getLocale, GTProvider } from 'gt-next/server';
